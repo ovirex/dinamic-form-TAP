@@ -168,12 +168,12 @@ window.addEventListener("DOMContentLoaded", function () {
                     costoConsultaMsg.children[1].innerText = "$25.00 (USD)";
                     metodoPagoMsg.children[1].innerText =
                         metodosPago.join(", ") + ".";
-                }*/ else if (paisesLatino.indexOf(paisesLista.value) != -1) {
+                } else if (paisesLatino.indexOf(paisesLista.value) != -1) {
                     document.getElementById("con-online").className = "";
                     costoConsultaMsg.children[1].innerText = "$20.00 (USD)";
                     metodoPagoMsg.children[1].innerText =
                         metodosPago.join(", ") + ".";
-                } else {
+                }*/ else {
                     document.getElementById("con-online").className = "";
                     costoConsultaMsg.children[1].innerText = "$25.00 (USD)";
                     metodoPagoMsg.children[1].innerText =
