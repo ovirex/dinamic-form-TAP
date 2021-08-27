@@ -56,6 +56,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
         let whatsappURL = ``;
 
+        /** Precios de las consultas */
+        const venezuelaPrecio = "$25.00";
+        const restoDelMundoPrecio = "$30.00";
+
         // inicializa los valores de visualización de los elementos
         resultadosHeading.className = "invisible";
         document.getElementById("con-online").className = "invisible";
@@ -107,7 +111,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     } else if (estadosLista.value == "Carabobo") {
                         document.getElementById("con-offline").className = "";
                         ambasConsultasIntro.className = "";
-                        costoConsultaMsg.children[1].innerText = "$20.00 (USD)";
+                        costoConsultaMsg.children[1].innerText = `${venezuelaPrecio} (USD)`;
                         metodoPagoMsg.children[1].innerText =
                             metodosPago.join(", ") + ", Efectivo.";
                     } else {
@@ -157,7 +161,7 @@ window.addEventListener("DOMContentLoaded", function () {
                         metodoPagoMsg.children[1].innerText =
                             metodosPago.join(", ") + ".";
                     }
-                    costoConsultaMsg.children[1].innerText = "$20.00 (USD)";
+                    costoConsultaMsg.children[1].innerText = `${venezuelaPrecio} (USD)`;
                 } /* else if (
                     paisesLista.value == "CA" ||
                     paisesLista.value == "US" ||
@@ -175,7 +179,7 @@ window.addEventListener("DOMContentLoaded", function () {
                         metodosPago.join(", ") + ".";
                 }*/ else {
                     document.getElementById("con-online").className = "";
-                    costoConsultaMsg.children[1].innerText = "$25.00 (USD)";
+                    costoConsultaMsg.children[1].innerText = `${restoDelMundoPrecio} (USD)`;
                     metodoPagoMsg.children[1].innerText =
                         metodosPago.join(", ") + ".";
                 }
