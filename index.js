@@ -58,8 +58,8 @@ window.addEventListener("DOMContentLoaded", function () {
         const whatsappNumero = "598-92-324-606";
 
         /** Precios de las consultas */
-        const venezuelaPrecio = "$25.00";
-        const restoDelMundoPrecio = "$30.00";
+        const venezuelaPrecio = "$30.00";
+        const restoDelMundoPrecio = "$40.00";
 
         // inicializa los valores de visualización de los elementos
         resultadosHeading.className = "invisible";
