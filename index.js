@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", function () {
         const whatsappBtn = document.getElementById("ws-btn");
 
         let whatsappURL = ``;
-        const whatsappNumero = "598-92-324-606";
+        const whatsappNumero = "59892324606";
 
         /** Precios de las consultas */
         const venezuelaPrecio = "$30.00";
@@ -216,9 +216,9 @@ window.addEventListener("DOMContentLoaded", function () {
             }
 
             if (tipoPaciente.value == 1) {
-                whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumero}&text=Hola%0A%0A${wsMsgVariaciones[0][0]}%20en%20una%20sesión%20${tipoPacienteMsg}.%0A%0A${wsMsgVariaciones[0][1]}%20nombre%20es%20${nombrePacienteMsg}.%0A%0A${wsMsgVariaciones[0][2]}%20${pacientAge.value}%20años%20de%20edad.%0A%0A${wsMsgVariaciones[0][3]}%20en%20${ubicacionMsg}.%0A%0A${wsMsgVariaciones[0][0]}%20${tipoConsultaMsg}.`;
+                whatsappURL = `https://wa.me/${whatsappNumero}?text=Hola%0A%0A${wsMsgVariaciones[0][0]}%20en%20una%20sesión%20${tipoPacienteMsg}.%0A%0A${wsMsgVariaciones[0][1]}%20nombre%20es%20${nombrePacienteMsg}.%0A%0A${wsMsgVariaciones[0][2]}%20${pacientAge.value}%20años%20de%20edad.%0A%0A${wsMsgVariaciones[0][3]}%20en%20${ubicacionMsg}.%0A%0A${wsMsgVariaciones[0][0]}%20${tipoConsultaMsg}.`;
             } else if (tipoPaciente.value == 2) {
-                whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumero}&text=Hola%0A%0A${wsMsgVariaciones[0][0]}%20en%20una%20sesión%20${tipoPacienteMsg}.%0A%0A${wsMsgVariaciones[1][1]}%20nombre%20es%20${nombrePacienteMsg}.%0A%0A${wsMsgVariaciones[1][2]}%20${pacientAge.value}%20años%20de%20edad.%0A%0A${wsMsgVariaciones[1][3]}%20en%20${ubicacionMsg}.%0A%0A${wsMsgVariaciones[1][4]}%20${tipoConsultaMsg}.`;
+                whatsappURL = `https://wa.me/${whatsappNumero}?text=Hola%0A%0A${wsMsgVariaciones[0][0]}%20en%20una%20sesión%20${tipoPacienteMsg}.%0A%0A${wsMsgVariaciones[1][1]}%20nombre%20es%20${nombrePacienteMsg}.%0A%0A${wsMsgVariaciones[1][2]}%20${pacientAge.value}%20años%20de%20edad.%0A%0A${wsMsgVariaciones[1][3]}%20en%20${ubicacionMsg}.%0A%0A${wsMsgVariaciones[1][4]}%20${tipoConsultaMsg}.`;
             }
 
             whatsappBtn.href = whatsappURL;
