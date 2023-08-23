@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", function () {
     resultadosConsultaBtn.addEventListener("click", function () {
         const pacientAge = form.elements["edad-paciente"];
         const paisesLista = document.getElementById("paises");
-        const estadosLista = document.getElementById("estados-ve");
+        // const estadosLista = document.getElementById("estados-ve");
         const tipoPaciente = document.getElementById("tipo-paciente");
         const tipoConsulta = document.getElementById("tipo-consulta");
         const nombrePaciente = document.getElementById("nombre-paciente");
@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", function () {
         const whatsappNumero = "59892324606";
 
         /** Precios de las consultas */
-        const venezuelaPrecio = "$30.00";
+        const venezuelaPrecio = "$40.00";
         const restoDelMundoPrecio = "$40.00";
 
         // inicializa los valores de visualización de los elementos
@@ -100,44 +100,44 @@ window.addEventListener("DOMContentLoaded", function () {
             pacientAge.value > 100 ||
             pacientAge.value < 0
         ) {
-            alert("Edad ingresada no valida no valida");
+            alert("Edad ingresada no valida");
         } else {
-            if (pacientAge.value <= 12) {
-                if (paisesLista.value == "VE") {
-                    if (estadosLista.value == 0) {
-                        alert(
-                            "Por favor seleccionar el estado donde se encuentre"
-                        );
-                        return;
-                    } else if (estadosLista.value == "Carabobo") {
-                        document.getElementById("con-offline").className = "";
-                        ambasConsultasIntro.className = "";
-                        costoConsultaMsg.children[1].innerText = `${venezuelaPrecio} (USD)`;
-                        metodoPagoMsg.children[1].innerText =
-                            metodosPago.join(", ") + ", Efectivo.";
-                    } else {
-                        whatsappBtn.className = "invisible";
-                        resultadosHeading.previousElementSibling.className =
-                            "invisible";
-                        resultadosHeading.className = "";
-                        document
-                            .querySelector(".concretar-msg")
-                            .classList.add("invisible");
+            if (pacientAge.value < 14) {
+                // if (paisesLista.value == "VE") {
+                //     if (estadosLista.value == 0) {
+                //         alert(
+                //             "Por favor seleccionar el estado donde se encuentre"
+                //         );
+                //         return;
+                //     } else if (estadosLista.value == "Carabobo") {
+                //         document.getElementById("con-offline").className = "";
+                //         ambasConsultasIntro.className = "";
+                //         costoConsultaMsg.children[1].innerText = `${venezuelaPrecio} (USD)`;
+                //         metodoPagoMsg.children[1].innerText =
+                //             metodosPago.join(", ") + ", Efectivo.";
+                //     } else {
+                //         whatsappBtn.className = "invisible";
+                //         resultadosHeading.previousElementSibling.className =
+                //             "invisible";
+                //         resultadosHeading.className = "";
+                //         document
+                //             .querySelector(".concretar-msg")
+                //             .classList.add("invisible");
 
-                        metodoPagoMsg.className = "invisible";
-                        costoConsultaMsg.className = "invisible";
-                    }
-                } else {
-                    whatsappBtn.className = "invisible";
-                    resultadosHeading.previousElementSibling.className =
-                        "invisible";
-                    resultadosHeading.className = "";
-                    metodoPagoMsg.className = "invisible";
-                    costoConsultaMsg.className = "invisible";
-                    document
-                        .querySelector(".concretar-msg")
-                        .classList.add("invisible");
-                }
+                //         metodoPagoMsg.className = "invisible";
+                //         costoConsultaMsg.className = "invisible";
+                //     }
+                // } else {
+                whatsappBtn.className = "invisible";
+                resultadosHeading.previousElementSibling.className =
+                    "invisible";
+                resultadosHeading.className = "";
+                metodoPagoMsg.className = "invisible";
+                costoConsultaMsg.className = "invisible";
+                document
+                    .querySelector(".concretar-msg")
+                    .classList.add("invisible");
+                // }
                 //expandir contenedor con los resultados
                 document.getElementById("resultados-contenedor").className =
                     "contenedor-expandido";
@@ -145,7 +145,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 if (paisesLista.value == 0) {
                     alert("Por favor ingresar un país");
                     return;
-                } else if (paisesLista.value == "VE") {
+                } /* else if (paisesLista.value == "VE") {
                     if (estadosLista.value == 0) {
                         alert(
                             "Por favor seleccionar el estado donde se encuentre"
@@ -163,7 +163,7 @@ window.addEventListener("DOMContentLoaded", function () {
                             metodosPago.join(", ") + ".";
                     }
                     costoConsultaMsg.children[1].innerText = `${venezuelaPrecio} (USD)`;
-                } /* else if (
+                } */ /* else if (
                     paisesLista.value == "CA" ||
                     paisesLista.value == "US" ||
                     paisesLista.value == "MX" ||
@@ -205,15 +205,15 @@ window.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
-            if (estadosLista.value != 0) {
+            /* if (estadosLista.value != 0) {
                 ubicacionMsg = `${
                     paisesLista[paisesLista.selectedIndex].innerText
                 }%20-%20${estadosLista.value}`;
-            } else {
-                ubicacionMsg = `${
-                    paisesLista[paisesLista.selectedIndex].innerText
-                }`;
-            }
+            } else { */
+            ubicacionMsg = `${
+                paisesLista[paisesLista.selectedIndex].innerText
+            }`;
+            /* } */
 
             if (tipoPaciente.value == 1) {
                 whatsappURL = `https://wa.me/${whatsappNumero}?text=Hola%0A%0A${wsMsgVariaciones[0][0]}%20en%20una%20sesión%20${tipoPacienteMsg}.%0A%0A${wsMsgVariaciones[0][1]}%20nombre%20es%20${nombrePacienteMsg}.%0A%0A${wsMsgVariaciones[0][2]}%20${pacientAge.value}%20años%20de%20edad.%0A%0A${wsMsgVariaciones[0][3]}%20en%20${ubicacionMsg}.%0A%0A${wsMsgVariaciones[0][0]}%20${tipoConsultaMsg}.`;
@@ -241,15 +241,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // Mostrar/ocultar el select con los estados
     const paisesLista = document.getElementById("paises");
-    const estadosLista = document.getElementById("estados-ve");
-    paisesLista.addEventListener("change", function () {
-        if (paisesLista.value == "VE") {
-            estadosLista.className = "";
-        } else {
-            estadosLista.className = "invisible";
-            estadosLista.selectedIndex = 0;
-        }
-    });
+    // const estadosLista = document.getElementById("estados-ve");
+    // paisesLista.addEventListener("change", function () {
+    //     if (paisesLista.value == "VE") {
+    //         estadosLista.className = "";
+    //     } else {
+    //         estadosLista.className = "invisible";
+    //         estadosLista.selectedIndex = 0;
+    //     }
+    // });
 });
 
 // obtener la posición del elemento
