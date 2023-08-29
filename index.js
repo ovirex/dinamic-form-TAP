@@ -6,7 +6,9 @@ window.addEventListener("DOMContentLoaded", function () {
     const metodosPago = [
         "Transferencia ZELLE",
         "Paypal",
-        "Banesco Panamá, Bs al Cambio",
+        "Banesco Panamá",
+        "Bs al Cambio",
+        "Tarjeta de Crédito",
     ];
     /*const paisesLatino = [
         "AR",
