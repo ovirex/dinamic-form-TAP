@@ -57,11 +57,12 @@ window.addEventListener("DOMContentLoaded", function () {
         const whatsappBtn = document.getElementById("ws-btn");
 
         let whatsappURL = ``;
-        const whatsappNumero = "59892324606";
+        const whatsappNumero = "584244104734";
 
         /** Precios de las consultas */
-        const venezuelaPrecio = "$40.00";
-        const restoDelMundoPrecio = "$40.00";
+        const venezuelaPrecio = "$50.00";
+        const restoDelMundoPrecio = "$50.00";
+        const packagePrice = "$120.00";
 
         // inicializa los valores de visualización de los elementos
         resultadosHeading.className = "invisible";
@@ -183,6 +184,12 @@ window.addEventListener("DOMContentLoaded", function () {
                 }*/ else {
                     document.getElementById("con-online").className = "";
                     costoConsultaMsg.children[1].innerText = `${restoDelMundoPrecio} (USD)`;
+                    costoConsultaMsg.children.namedItem(
+                        "unit-price"
+                    ).innerText = `Precio Unitario: ${restoDelMundoPrecio} (USD)`;
+                    costoConsultaMsg.children.namedItem(
+                        "package-price"
+                    ).innerText = `Paquete 3 Consultas: ${packagePrice} (USD)`;
                     metodoPagoMsg.children[1].innerText =
                         metodosPago.join(", ") + ".";
                 }
